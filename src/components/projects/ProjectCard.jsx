@@ -108,10 +108,10 @@ export default function ProjectCard({ project, onSelect }) {
 
           {/* Bottom Action Bar */}
           <div
-            className="flex items-center justify-between pt-4 border-t border-slate-800/80 text-xs font-semibold text-slate-400 group-hover:text-[#38bdf8] transition-colors"
+            className="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-slate-800/80 text-xs font-semibold text-slate-400 group-hover:text-[#38bdf8] transition-colors"
             onClick={(e) => e.stopPropagation()}
           >
-            <span className="inline-flex items-center gap-1.5">
+            <span className="inline-flex items-center gap-1.5 text-sm text-slate-200">
               <Eye size={14} />
               <span>Open App Details</span>
             </span>

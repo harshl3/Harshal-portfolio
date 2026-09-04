@@ -13,7 +13,7 @@ export const experiences = [
       "Debugging and optimizing application performance to ensure smooth user experience.",
       "Collaborating with senior engineers to design and implement new features.",
     ],
-    technologies: ["Android", "Flutter", "Java", "Firebase", "Git", "GitHub"],
+    technologies: ["Android", "Flutter", "Java", "Firebase","Nodejs","Express js", "Git", "GitHub"],
   },
   {
     id: 2,

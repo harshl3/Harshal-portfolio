@@ -17,7 +17,8 @@ export const skillCategories = [
     icon: "Monitor",
     skills: [
       "Flutter",
-      "Android (Jetpack)",
+      "Android ",
+      "IOS",
       "Provider",
       "Google Maps SDK",
     ],
@@ -44,8 +45,11 @@ export const skillCategories = [
       "VS Code",
       "Git & GitHub",
       "Flutter SDK",
+      "Claude Code",
       "Cursor",
-      "Google Play Store",
+      "Windsurf",
+      "replit",
+
     ],
   },
 ];

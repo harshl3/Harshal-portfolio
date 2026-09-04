@@ -81,7 +81,7 @@ export default function HeroSection() {
               }}
             >
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
-              <span>Final-Year B.Tech IT · Android & Flutter App Engineer</span>
+              <span>Final-Year B.Tech IT · Software Developer</span>
             </motion.div>
 
             {/* Greeting */}

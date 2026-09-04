@@ -5,7 +5,7 @@ export const education = [
     institution: "St. Vincent Pallotti College Of Engineering & Technology",
     duration: "2023 – 2027",
     score: "CGPA: 9.41",
-    status: "Currently Pursuing (Final Year)",
+    status: "Currently Pursuing",
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ export const education = [
   },
   {
     id: 3,
-    degree: "Secondary School Certificate (X)",
+    degree: "Secondary School Certificate ",
     institution: "Jeevan Vikas Vidyalaya School",
     duration: "2021",
     score: "89.90%",
