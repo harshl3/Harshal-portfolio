@@ -2,7 +2,8 @@
 
 A modern, responsive, and interactive developer portfolio built to showcase my projects, technical skills, experience, achievements, certifications.
 
-![Portfolio Preview](/images/profile/logo.png)
+![Portfolio Preview](./public/images/og-image.png)
+
 ## 🌐 Live Portfolio
 
 > Add your deployed Vercel URL here
