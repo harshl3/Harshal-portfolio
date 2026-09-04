@@ -32,6 +32,7 @@ export const personalInfo = {
   github: "https://github.com/harshl3",
   linkedin: "http://www.linkedin.com/in/harshal-mendhule3",
   gfg: "https://www.geeksforgeeks.org/profile/harshalmexrr1?tab=activity",
+  leetcode: "https://leetcode.com/u/Harshl_3/",
   twitter: null,
 
   resumeUrl: "/resume/resume.pdf",

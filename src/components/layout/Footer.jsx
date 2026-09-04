@@ -57,6 +57,11 @@ export default function Footer() {
               icon={<span className="font-bold text-xs text-[#2f8d46] font-mono">GFG</span>}
             />
             <FooterSocialLink
+              href={personalInfo.leetcode}
+              label="LeetCode"
+              icon={<span className="font-bold text-sm text-[#ffa116] font-mono">LC</span>}
+            />
+            <FooterSocialLink
               href={`mailto:${personalInfo.email}`}
               label="Email"
               icon={<Mail size={16} />}
@@ -79,7 +84,7 @@ export default function Footer() {
 
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500 text-center sm:text-left">
           <p>© {new Date().getFullYear()} {personalInfo.name}. All rights reserved.</p>
-          <p className="font-mono text-[0.7rem]">Designed & Built with React, Vite & Tailwind CSS</p>
+          <p className="font-mono text-[0.7rem]"></p>
         </div>
       </div>
     </footer>
@@ -93,7 +98,7 @@ function FooterSocialLink({ href, icon, label }) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className="w-9 h-9 rounded-xl flex items-center justify-center bg-[#0b1222] border border-slate-800 text-slate-400 hover:text-white hover:border-[#38bdf8] transition-all"
+      className="w-11 h-11 rounded-xl flex items-center justify-center bg-[#0b1222] border border-slate-800 text-slate-400 hover:text-white hover:border-[#38bdf8] transition-all"
     >
       {icon}
     </a>

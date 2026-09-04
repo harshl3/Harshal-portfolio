@@ -62,12 +62,12 @@ export default function ContactSection() {
           subtitle="Whether you have an Android/Flutter project, internship opportunity, or technical inquiry, my inbox is open."
         />
 
-        <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 max-w-5xl mx-auto items-start">
+        <div className="grid lg:grid-cols-12 gap-14 lg:gap-20 max-w-6xl mx-auto items-start">
           
           {/* ─── LEFT COLUMN: Free & Clean Contact Details (5 cols) ─── */}
-          <div className="lg:col-span-5 space-y-6">
+          <div className="lg:col-span-5 space-y-7">
             <FadeInUp delay={0.1}>
-              <div className="glass-card p-7 sm:p-8 border border-slate-800/80 rounded-3xl space-y-6 shadow-xl">
+              <div className="space-y-7">
                 <div>
                   <h3
                     className="text-xl font-bold text-white tracking-tight"
@@ -80,7 +80,7 @@ export default function ContactSection() {
                   </p>
                 </div>
 
-                <div className="space-y-3.5">
+                <div className="space-y-4">
                   <ContactRow
                     icon={<Mail size={16} className="text-[#5cc8ff]" />}
                     label="Email"
@@ -101,14 +101,14 @@ export default function ContactSection() {
                 </div>
 
                 {/* Resume Download CTA Card */}
-                <div className="pt-5 border-t border-slate-800/80">
+                <div className="pt-7 border-t border-slate-800/80">
                   <a
                     href={personalInfo.resumeUrl}
                     download
                     className="btn-primary w-full justify-center text-sm py-3.5 rounded-2xl shadow-xl"
                   >
                     <Download size={16} />
-                    <span>Download Full Resume</span>
+                    <span>Download Resume</span>
                   </a>
                 </div>
               </div>
@@ -120,7 +120,7 @@ export default function ContactSection() {
             <FadeInUp delay={0.15}>
               <form
                 onSubmit={handleSubmit}
-                className="glass-card p-7 sm:p-9 border border-slate-800/80 rounded-3xl space-y-5 shadow-xl"
+                className="glass-card p-7 sm:p-9 border border-slate-800/80 rounded-3xl space-y-7 shadow-xl"
                 noValidate
               >
                 <div>
@@ -145,7 +145,7 @@ export default function ContactSection() {
                     name="name"
                     id="contact-name"
                     className="form-input"
-                    placeholder="e.g. Alex Johnson"
+                    placeholder="Your Name Here"
                     value={formData.name}
                     onChange={handleChange}
                   />
@@ -262,7 +262,7 @@ export default function ContactSection() {
 
 function ContactRow({ icon, label, value, href }) {
   const content = (
-    <div className="flex items-center justify-between gap-3.5 p-3.5 rounded-2xl bg-[#070d18] border border-slate-800/80 hover:border-[#5cc8ff]/30 transition-all group">
+    <div className="flex items-center justify-between gap-3.5 p-4 rounded-2xl bg-[#070d18]/75 border border-slate-800/80 hover:border-[#5cc8ff]/30 transition-all group shadow-sm">
       <div className="flex items-center gap-3.5 min-w-0">
         <div className="w-10 h-10 rounded-xl bg-[#0f172a] border border-sky-400/20 flex items-center justify-center shrink-0">
           {icon}

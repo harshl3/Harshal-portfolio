@@ -29,7 +29,7 @@ export const experiences = [
       "Designing multi-school database architecture and offline synchronization.",
       "Managing sprint deliverables and coordinating between team members.",
     ],
-    technologies: ["Flutter", "Dart", "Firebase", "Cloud Firestore", "Team Leadership"],
+    technologies: ["Flutter", "Dart", "Firebase", "Cloud Firestore","Excel Integration", "Team Leadership"],
   },
   {
     id: 3,
@@ -45,6 +45,6 @@ export const experiences = [
       "Built and deployed Android applications using modern Android Architecture components.",
       "Learned best practices for app architecture, memory management, and Firebase.",
     ],
-    technologies: ["Android", "Firebase", "Java", "Kotlin", "Modern Architecture"],
+    technologies: ["Android", "Firebase", "Java", "Modern Architecture"],
   },
 ];

@@ -9,8 +9,8 @@ export default function CertificationsSection() {
       <div className="section-container">
         <SectionHeader
           label="Certifications & Learning"
-          title="Verified Credentials"
-          subtitle="Professional coursework and industry-recognized certifications in DSA, Flutter, and Mobile Development."
+          title="Certificates"
+          subtitle="Professional coursework and industry-recognized certifications in relevant Technologies."
         />
 
         <div className="card-grid sm:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
