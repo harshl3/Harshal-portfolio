@@ -5,7 +5,7 @@ import { education } from "../data/education";
 
 export default function EducationSection() {
   return (
-    <SectionWrapper id="education" style={{ background: "var(--bg-secondary)" }}>
+    <SectionWrapper id="education" className="relative">
       <div className="section-container">
         <SectionHeader
           label="Academic Foundation"
@@ -58,7 +58,7 @@ export default function EducationSection() {
                   </div>
 
                   {/* Score / CGPA Badge */}
-                  <div className="sm:self-center shrink-0 pl-16 sm:pl-0">
+                  <div className="sm:self-center shrink-0 pl-[64px] sm:pl-0">
                     <div
                       className="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl"
                       style={{

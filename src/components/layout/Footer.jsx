@@ -7,13 +7,14 @@ export default function Footer() {
 
   return (
     <footer
+      className="relative z-10 backdrop-blur-xl"
       style={{
         borderTop: "1px solid rgba(56, 189, 248, 0.15)",
-        background: "var(--bg-secondary)",
+        background: "rgba(4, 8, 18, 0.82)",
       }}
     >
-      <div className="section-container py-12">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-slate-850">
+      <div className="section-container py-10 sm:py-12">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-7 sm:pb-8 border-b border-slate-800/60">
           
           {/* Left: Brand / Name */}
           <div className="flex items-center gap-3.5 text-center md:text-left">
@@ -32,7 +33,7 @@ export default function Footer() {
           </div>
 
           {/* Center: Social Icons */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2.5 flex-wrap justify-center">
             <FooterSocialLink
               href={personalInfo.linkedin}
               label="LinkedIn"
@@ -82,7 +83,7 @@ export default function Footer() {
 
         </div>
 
-        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500 text-center sm:text-left">
+        <div className="pt-5 sm:pt-6 flex flex-col sm:flex-row items-center justify-between gap-2.5 text-xs text-slate-500 text-center sm:text-left">
           <p>© {new Date().getFullYear()} {personalInfo.name}. All rights reserved.</p>
           <p className="font-mono text-[0.7rem]"></p>
         </div>

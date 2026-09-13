@@ -5,6 +5,7 @@ import { Menu, X } from "lucide-react";
 const navLinks = [
 { label: "Home", href: "#home" },
 { label: "About", href: "#about" },
+{ label: "Education", href: "#education" },
 { label: "Skills", href: "#skills" },
 { label: "Experience", href: "#experience" },
 { label: "Projects", href: "#projects" },
@@ -14,127 +15,104 @@ const navLinks = [
 ];
 
 export default function Navbar() {
-const [mobileOpen, setMobileOpen] = useState(false);
-const [activeSection, setActiveSection] = useState("home");
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
+  const [isScrolled, setIsScrolled] = useState(false);
 
-// Active section detection
-useEffect(() => {
-const sectionIds = navLinks.map((link) =>
-link.href.slice(1)
-);
+  // Scroll detection for fixed navbar glass effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-const observers = [];
+  // Active section detection
+  useEffect(() => {
+    const sectionIds = navLinks.map((link) => link.href.slice(1));
+    const observers = [];
 
-sectionIds.forEach((id) => {
-  const element = document.getElementById(id);
+    sectionIds.forEach((id) => {
+      const element = document.getElementById(id);
+      if (!element) return;
 
-  if (!element) return;
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setActiveSection(id);
+          }
+        },
+        {
+          rootMargin: "-35% 0px -55% 0px",
+          threshold: 0,
+        }
+      );
 
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      if (entry.isIntersecting) {
-        setActiveSection(id);
+      observer.observe(element);
+      observers.push(observer);
+    });
+
+    return () => {
+      observers.forEach((observer) => observer.disconnect());
+    };
+  }, []);
+
+  // Close mobile menu on resize
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setMobileOpen(false);
       }
-    },
-    {
-      rootMargin: "-35% 0px -55% 0px",
-      threshold: 0,
-    }
-  );
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
-  observer.observe(element);
-  observers.push(observer);
-});
+  // Prevent scrolling behind mobile menu
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
 
-return () => {
-  observers.forEach((observer) => observer.disconnect());
-};
+  const handleNavClick = (href) => {
+    setMobileOpen(false);
+    const element = document.querySelector(href);
+    if (!element) return;
 
-}, []);
+    const offset = 85;
+    const top = element.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({
+      top,
+      behavior: "smooth",
+    });
+  };
 
-// Close mobile menu on resize
-useEffect(() => {
-const handleResize = () => {
-if (window.innerWidth >= 1024) {
-setMobileOpen(false);
-}
-};
-
-window.addEventListener("resize", handleResize);
-
-return () => {
-  window.removeEventListener("resize", handleResize);
-};
-
-}, []);
-
-// Prevent scrolling behind mobile menu
-useEffect(() => {
-document.body.style.overflow = mobileOpen
-? "hidden"
-: "";
-
-return () => {
-  document.body.style.overflow = "";
-};
-
-}, [mobileOpen]);
-
-const handleNavClick = (href) => {
-setMobileOpen(false);
-
-const element = document.querySelector(href);
-
-if (!element) return;
-
-const offset = 100;
-
-const top =
-  element.getBoundingClientRect().top +
-  window.scrollY -
-  offset;
-
-window.scrollTo({
-  top,
-  behavior: "smooth",
-});
-
-};
-
-return (
-<>
-{/* =====================================================
-FLOATING TOP NAVBAR
-NOT FIXED — SCROLLS AWAY WITH THE PAGE
-====================================================== */}
-
-  <header className="relative z-[500] w-full px-4 sm:px-6 lg:px-8 pt-5 sm:pt-6">
-    <div className="flex justify-center">
-
-      <motion.nav
-        initial={{
-          y: -25,
-          opacity: 0,
-        }}
-        animate={{
-          y: 0,
-          opacity: 1,
-        }}
-        transition={{
-          duration: 0.55,
-          ease: [0.22, 1, 0.36, 1],
-        }}
-        className="
-          w-full
-          max-w-[1180px]
-          rounded-[18px]
-          border
-          border-white/[0.09]
-          bg-[#080b12]/70
-          backdrop-blur-2xl
-          shadow-[0_8px_30px_rgba(0,0,0,0.20)]
-        "
+  return (
+    <>
+      {/* =====================================================
+          FIXED & DYNAMIC GLASS NAVBAR
+          STAYS ACCESSIBLE WITH CRISP BLUR
+      ====================================================== */}
+      <header
+        className={`fixed top-0 left-0 right-0 z-[500] w-full px-3 sm:px-6 lg:px-8 transition-all duration-300 ${
+          isScrolled ? "pt-2 sm:pt-3" : "pt-4 sm:pt-6"
+        }`}
       >
+        <div className="flex justify-center">
+          <motion.nav
+            initial={{ y: -25, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+            className={`w-full max-w-[1180px] rounded-[18px] sm:rounded-[22px] border transition-all duration-300 ${
+              isScrolled
+                ? "border-slate-800/90 bg-[#060a16]/85 backdrop-blur-2xl shadow-[0_12px_36px_rgba(0,0,0,0.55)]"
+                : "border-white/[0.08] bg-[#070b14]/75 backdrop-blur-xl shadow-[0_8px_30px_rgba(0,0,0,0.25)]"
+            }`}
+          >
         <div
           className="
             min-h-[68px]
@@ -409,7 +387,8 @@ NOT FIXED — SCROLLS AWAY WITH THE PAGE
     <motion.div
       className="
         fixed
-        top-[92px]
+        top-[76px]
+        sm:top-[84px]
         left-3
         right-3
         z-[499]

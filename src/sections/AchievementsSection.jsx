@@ -26,10 +26,10 @@ export default function AchievementsSection() {
           subtitle="National competition awards, coding leaderboard rankings, and student leadership roles."
         />
 
-        <div className="card-grid sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6">
           {achievements.map((item, i) => (
-            <FadeInUp key={item.id} delay={i * 0.07}>
-              <div className="glass-card p-6 sm:p-7 border border-slate-800/90 hover:border-[#38bdf8]/40 transition-all rounded-2xl flex flex-col h-full shadow-lg">
+            <FadeInUp key={item.id} delay={i * 0.07} className="h-full">
+              <div className="glass-card p-5 sm:p-7 border border-slate-800/90 hover:border-[#38bdf8]/40 transition-all rounded-2xl flex flex-col h-full shadow-lg">
                 
                 {/* Top Row: Icon & Position Badge */}
                 <div className="flex items-center justify-between gap-3 mb-4">

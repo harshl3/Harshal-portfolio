@@ -62,7 +62,7 @@ export default function ContactSection() {
           subtitle="Whether you have an Android/Flutter project, internship opportunity, or technical inquiry, my inbox is open."
         />
 
-        <div className="grid lg:grid-cols-12 gap-14 lg:gap-20 max-w-6xl mx-auto items-start">
+        <div className="grid lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-16 max-w-6xl mx-auto items-start">
           
           {/* ─── LEFT COLUMN: Free & Clean Contact Details (5 cols) ─── */}
           <div className="lg:col-span-5 space-y-7">
@@ -120,7 +120,7 @@ export default function ContactSection() {
             <FadeInUp delay={0.15}>
               <form
                 onSubmit={handleSubmit}
-                className="glass-card p-7 sm:p-9 border border-slate-800/80 rounded-3xl space-y-7 shadow-xl"
+                className="glass-card p-5 sm:p-8 border border-slate-800/80 rounded-2xl sm:rounded-3xl space-y-5 sm:space-y-7 shadow-xl"
                 noValidate
               >
                 <div>

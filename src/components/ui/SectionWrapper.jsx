@@ -25,7 +25,7 @@ export default function SectionWrapper({ id, className = "", style = {}, childre
 export function SectionHeader({ label, title, subtitle }) {
   return (
     <motion.div
-      className="mb-14 text-center max-w-3xl mx-auto"
+      className="mb-8 sm:mb-11 lg:mb-14 text-center max-w-3xl mx-auto"
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}

@@ -14,8 +14,24 @@ export default function ProjectsSection() {
   const hasMore = projects.length > 3;
 
   return (
-    <SectionWrapper id="projects" style={{ background: "var(--bg-secondary)" }}>
-      <div className="section-container">
+    <SectionWrapper id="projects" className="relative">
+      {/* Subtle Ambient Radial Lighting Accents */}
+      <div
+        className="absolute top-1/3 -right-24 w-[420px] h-[420px] rounded-full pointer-events-none"
+        style={{
+          background: "radial-gradient(circle, rgba(0, 112, 243, 0.08) 0%, transparent 70%)",
+          filter: "blur(80px)",
+        }}
+      />
+      <div
+        className="absolute bottom-1/4 -left-24 w-[420px] h-[420px] rounded-full pointer-events-none"
+        style={{
+          background: "radial-gradient(circle, rgba(56, 189, 248, 0.06) 0%, transparent 70%)",
+          filter: "blur(80px)",
+        }}
+      />
+
+      <div className="section-container relative z-10">
         <SectionHeader
           label="Featured Projects"
           title="Engineered Mobile & AI Applications"
@@ -23,16 +39,19 @@ export default function ProjectsSection() {
         />
 
         {/* Projects Grid with Consistent Card Spacing */}
-        <motion.div className="card-grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7" layout>
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6"
+          layout
+        >
           <AnimatePresence mode="popLayout">
             {displayedProjects.map((project) => (
               <motion.div
                 key={project.id}
                 layout
-                initial={{ opacity: 0, scale: 0.96 }}
+                initial={{ opacity: 0, scale: 0.94 }}
                 animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.96 }}
-                transition={{ duration: 0.25 }}
+                exit={{ opacity: 0, scale: 0.94 }}
+                transition={{ duration: 0.28 }}
                 className="flex h-full"
               >
                 <ProjectCard
@@ -47,7 +66,7 @@ export default function ProjectsSection() {
         {/* Show More / Show Less Toggle Button */}
         {hasMore && (
           <FadeInUp delay={0.2}>
-            <div className="flex justify-center mt-14">
+            <div className="flex justify-center mt-10 sm:mt-14">
               <button
                 onClick={() => setShowAll((prev) => !prev)}
                 className="btn-secondary px-7 py-3.5 rounded-full flex items-center gap-2 text-sm font-semibold hover:border-[#38bdf8] hover:text-[#38bdf8] shadow-lg"

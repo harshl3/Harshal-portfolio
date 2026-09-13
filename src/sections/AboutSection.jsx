@@ -21,7 +21,7 @@ export default function AboutSection() {
           subtitle="Passionate about building scalable mobile apps that solve practical, everyday challenges."
         />
 
-        <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+        <div className="grid lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-14 items-start">
           
           {/* ─── LEFT COLUMN: Profile Visual + 4 Highlight Stats ─── */}
           <div className="lg:col-span-5 space-y-5">
@@ -131,7 +131,7 @@ export default function AboutSection() {
                   </div>
                 </div>
 
-                <div className="sm:self-center shrink-0 pl-15 sm:pl-0">
+                <div className="sm:self-center shrink-0 pl-[60px] sm:pl-0">
                   <div className="px-3.5 py-1.5 rounded-xl bg-[#0070f3]/10 border border-[#0070f3]/30 text-right">
                     <span className="text-[0.65rem] text-slate-400 block font-mono">CGPA</span>
                     <span className="text-sm font-bold text-white font-mono">{education[0]?.score}</span>

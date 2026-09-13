@@ -5,7 +5,7 @@ import { certifications } from "../data/certifications";
 
 export default function CertificationsSection() {
   return (
-    <SectionWrapper id="certifications" style={{ background: "var(--bg-secondary)" }}>
+    <SectionWrapper id="certifications" className="relative">
       <div className="section-container">
         <SectionHeader
           label="Certifications & Learning"
@@ -13,10 +13,10 @@ export default function CertificationsSection() {
           subtitle="Professional coursework and industry-recognized certifications in relevant Technologies."
         />
 
-        <div className="card-grid sm:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6 max-w-5xl mx-auto">
           {certifications.map((cert, i) => (
-            <FadeInUp key={cert.id} delay={i * 0.08}>
-              <div className="glass-card p-6 sm:p-7 border border-slate-800 hover:border-[#38bdf8]/40 transition-all rounded-2xl flex flex-col h-full shadow-lg group">
+            <FadeInUp key={cert.id} delay={i * 0.08} className="h-full">
+              <div className="glass-card p-5 sm:p-7 border border-slate-800 hover:border-[#38bdf8]/40 transition-all rounded-2xl flex flex-col h-full shadow-lg group">
                 
                 {/* Certificate Icon Placeholder Area (Matching Image 3) */}
                 <div className="w-full aspect-[16/9] rounded-xl bg-[#060a16] border border-slate-850 flex flex-col items-center justify-center p-4 mb-5 group-hover:border-[#38bdf8]/30 transition-colors">

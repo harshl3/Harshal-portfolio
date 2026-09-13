@@ -42,13 +42,18 @@ export default function ProjectModal({ project, onClose }) {
           transition={{ type: "spring", stiffness: 300, damping: 28 }}
           onClick={(e) => e.stopPropagation()}
         >
+          {/* Mobile drag handle */}
+          <div className="flex justify-center pt-3 pb-1 sm:hidden">
+            <div className="w-10 h-1 rounded-full bg-slate-700" />
+          </div>
+
           {/* Close Button */}
           <button
             onClick={onClose}
             aria-label="Close modal"
-            className="absolute top-5 right-5 z-20 w-10 h-10 rounded-xl flex items-center justify-center bg-[#070b16]/80 border border-slate-700 text-slate-300 hover:text-white hover:border-[#38bdf8] transition-all shadow-lg"
+            className="absolute top-3 sm:top-5 right-3 sm:right-5 z-20 w-9 h-9 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center bg-[#070b16]/80 border border-slate-700 text-slate-300 hover:text-white hover:border-[#38bdf8] transition-all shadow-lg"
           >
-            <X size={20} />
+            <X size={18} />
           </button>
 
           {/* ─── SCREENSHOTS GALLERY ─── */}
@@ -110,21 +115,18 @@ export default function ProjectModal({ project, onClose }) {
           )}
 
           {/* ─── MODAL CONTENT ─── */}
-          <div className="p-6 sm:p-8 space-y-7">
+          <div className="p-5 sm:p-8 space-y-5 sm:space-y-7">
             
             {/* Header: Title & Action Links */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-slate-800">
               <div>
-                <span className="text-xs font-bold uppercase tracking-widest text-[#38bdf8] font-mono">
-                  {project.category === "mobile" ? "Mobile Application" : project.category}
-                </span>
                 <h2
-                  className="text-2xl sm:text-3xl font-bold text-white mt-1 tracking-tight"
+                  className="text-2xl sm:text-3xl font-bold text-white tracking-tight"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   {project.title}
                 </h2>
-                <p className="text-sm text-slate-400 mt-0.5 font-medium">{project.subtitle}</p>
+                <p className="text-sm text-[#38bdf8] mt-1 font-medium">{project.subtitle}</p>
               </div>
 
               {/* Action Buttons: Prominent Download App APK */}

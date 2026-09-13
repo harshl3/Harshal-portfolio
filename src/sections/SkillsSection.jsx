@@ -21,31 +21,36 @@ export default function SkillsSection() {
           subtitle="Core engineering toolkit for crafting cross-platform mobile apps and scalable backend architectures."
         />
 
-        <div className="card-grid sm:grid-cols-2 lg:grid-cols-2">
+        <div
+          className="grid gap-4 sm:gap-5"
+          style={{
+            gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 400px), 1fr))",
+          }}
+        >
           {skillCategories.map((category, catIdx) => {
             const Icon = iconMap[category.icon] || Code2;
             return (
-              <FadeInUp key={category.id} delay={catIdx * 0.08}>
-                <div className="glass-card p-6 h-full border border-slate-800/80 hover:border-[#38bdf8]/30 rounded-3xl flex flex-col shadow-lg">
-                  <div className="flex items-center gap-3.5 mb-5 pb-3.5 border-b border-slate-800/80">
+              <FadeInUp key={category.id} delay={catIdx * 0.08} className="h-full">
+                <div className="glass-card p-5 sm:p-6 h-full border border-slate-800/80 hover:border-[#38bdf8]/30 rounded-3xl flex flex-col shadow-lg">
+                  <div className="flex items-center gap-3 sm:gap-3.5 mb-4 sm:mb-5 pb-3 sm:pb-3.5 border-b border-slate-800/80">
                     <div
-                      className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
+                      className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center shrink-0"
                       style={{
                         background: "rgba(15, 23, 42, 0.82)",
                         border: "1px solid rgba(92, 200, 255, 0.18)",
                       }}
                     >
-                      <Icon size={18} className="text-[#5cc8ff]" />
+                      <Icon size={17} className="text-[#5cc8ff]" />
                     </div>
                     <h3
-                      className="text-lg font-bold text-white tracking-tight"
+                      className="text-base sm:text-lg font-bold text-white tracking-tight"
                       style={{ fontFamily: "var(--font-display)" }}
                     >
                       {category.label}
                     </h3>
                   </div>
 
-                  <div className="flex flex-wrap gap-2.5 flex-1 items-start">
+                  <div className="flex flex-wrap gap-2 sm:gap-2.5 flex-1 items-start">
                     {category.skills.map((skill) => (
                       <span key={skill} className="skill-pill">
                         {skill}

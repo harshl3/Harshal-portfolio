@@ -1,21 +1,8 @@
 import { useState } from "react";
-import { ExternalLink, Eye, Smartphone, Brain, Globe, ArrowUpRight } from "lucide-react";
+import { ExternalLink, Eye, ArrowUpRight, Smartphone } from "lucide-react";
 
 export default function ProjectCard({ project, onSelect }) {
   const [imgError, setImgError] = useState(false);
-
-  const getCategoryBadge = (cat) => {
-    switch (cat) {
-      case "mobile":
-        return { label: "Mobile App", icon: <Smartphone size={12} className="text-[#38bdf8]" /> };
-      case "ai-ml":
-        return { label: "AI / ML Platform", icon: <Brain size={12} className="text-[#38bdf8]" /> };
-      default:
-        return { label: "Web App", icon: <Globe size={12} className="text-[#38bdf8]" /> };
-    }
-  };
-
-  const badge = getCategoryBadge(project.category);
 
   return (
     <div
@@ -47,25 +34,17 @@ export default function ProjectCard({ project, onSelect }) {
           </div>
         )}
 
-        {/* Category Pill on top left */}
-        <div className="absolute top-4 left-4">
-          <span className="inline-flex items-center gap-1.5 text-[0.72rem] font-semibold px-3 py-1.5 rounded-full bg-[#05070f]/90 backdrop-blur-md border border-slate-700/80 text-slate-200 shadow-md">
-            {badge.icon}
-            <span>{badge.label}</span>
-          </span>
-        </div>
-
-        {/* Hover View Button Overlay */}
-        <div className="absolute inset-0 bg-[#04060d]/65 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold bg-[#0070f3] text-white shadow-2xl">
-            <Eye size={14} />
-            <span>Open App Details</span>
+        {/* Refined Hover Indicator */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#04060d]/75 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end justify-end p-3.5 pointer-events-none">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-[#081024]/90 text-white backdrop-blur-md border border-[#38bdf8]/30 shadow-lg">
+            <Eye size={13} className="text-[#38bdf8]" />
+            <span>View Details</span>
           </div>
         </div>
       </div>
 
       {/* Card Content with Generous Padding */}
-      <div className="p-6 sm:p-7 flex flex-col flex-1 justify-between">
+      <div className="p-5 sm:p-6 flex flex-col flex-1 justify-between">
         
         <div className="min-w-0">
           {/* Title & Subtitle */}
@@ -77,7 +56,7 @@ export default function ProjectCard({ project, onSelect }) {
               {project.title}
             </h3>
             <div className="w-7 h-7 rounded-full bg-slate-800/60 flex items-center justify-center shrink-0 group-hover:bg-[#0070f3]/20 transition-colors mt-0.5">
-              <ArrowUpRight size={15} className="text-slate-400 group-hover:text-[#38bdf8] transition-colors" />
+              <ArrowUpRight size={15} className="text-slate-400 group-hover:text-[#38bdf8] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </div>
           </div>
 
@@ -93,7 +72,7 @@ export default function ProjectCard({ project, onSelect }) {
 
         <div>
           {/* Technologies Tags */}
-          <div className="flex flex-wrap gap-1.5 mb-6">
+          <div className="flex flex-wrap gap-1.5 mb-5">
             {project.technologies.slice(0, 4).map((tech) => (
               <span key={tech} className="tech-tag">
                 {tech}
