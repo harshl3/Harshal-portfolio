@@ -1,10 +1,9 @@
-
 {
   "redirects": [
     {
-      "source": "/:path*",
-      "destination": "https://harshal-mendhule-portfolio.vercel.app/:path*",
-      "permanent": true
+      "source": "/(.*)",
+      "destination": "https://harshal-mendhule-portfolio.vercel.app/",
+      "permanent": false
     }
   ],
   "rewrites": [
