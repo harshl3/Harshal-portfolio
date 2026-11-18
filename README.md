@@ -6,7 +6,7 @@ A modern, responsive, and interactive developer portfolio built to showcase my p
 
 ## 🌐 Live Portfolio
 
-**Portfolio:** `[https://your-portfolio.vercel.app](https://harshal-mendhule-portfolio.vercel.app/)`
+**Portfolio:** `https://harshal-mendhule-portfolio.vercel.app/`
 
 ---
 
